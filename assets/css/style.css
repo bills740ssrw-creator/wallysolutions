@@ -1,6 +1,6 @@
-/* Wally Solutions — premium, human-made, mobile-first design system
-   Elegant warm palette: cream paper, charcoal ink, bronze accent.
-   No gradients, no glows, no AI slop. Clean typography and real images only.
+/* Wally Solutions — premium, human-made, mobile-first
+   Warm, elegant palette: cream paper, deep ink, gold-bronze accent.
+   Designed to feel like a real agency, not AI slop.
 */
 
 @font-face {
@@ -20,19 +20,19 @@
 }
 
 :root {
-  --bg: #fbfaf5;
+  --bg: #fbfaf6;
   --surface: #ffffff;
-  --text: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #7c5e3e;
-  --accent-hover: #5c4a2e;
-  --border: #e4dccf;
-  --line: 1.5;
+  --ink: #0b0b09;
+  --muted: #66625a;
+  --accent: #a16207;
+  --accent-hover: #7c4d05;
+  --border: #e8e3d9;
+  --line: 1.55;
+  --radius: 10px;
+  --wrap: 1040px;
+  --shadow: 0 24px 48px -16px rgba(0,0,0,0.07);
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Geist", system-ui, sans-serif;
-  --radius: 8px;
-  --wrap: 1080px;
-  --shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
 }
 
 *,
@@ -47,7 +47,7 @@ html {
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
   line-height: var(--line);
@@ -68,20 +68,20 @@ a { color: inherit; text-decoration: none; }
   padding-inline: 24px;
 }
 
-/* Header */
+/* ---------- Header ---------- */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  height: 64px;
-  background: rgba(251, 250, 245, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  height: 60px;
+  background: rgba(251, 250, 246, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
 .header--scrolled {
-  background: rgba(251, 250, 245, 0.98);
-  box-shadow: 0 4px 20px -6px rgba(0,0,0,0.06);
+  background: rgba(251, 250, 246, 0.96);
+  box-shadow: 0 4px 20px -8px rgba(0,0,0,0.05);
 }
 
 .header .wrap {
@@ -94,31 +94,31 @@ a { color: inherit; text-decoration: none; }
 .brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 20px;
+  font-size: 19px;
   letter-spacing: -0.5px;
-  color: var(--text);
+  color: var(--ink);
 }
 
 .brand span {
   color: var(--accent);
 }
 
-/* Buttons */
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
   background: var(--surface);
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.2px;
   border-radius: var(--radius);
-  padding: 14px 24px;
+  padding: 14px 26px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .btn--primary {
@@ -130,30 +130,42 @@ a { color: inherit; text-decoration: none; }
 .btn--primary:hover {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px -4px rgba(124, 94, 62, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(161, 98, 7, 0.35);
 }
 
 .btn--large {
-  font-size: 16px;
-  padding: 16px 32px;
-  border-radius: 10px;
+  font-size: 16.5px;
+  padding: 18px 36px;
+  border-radius: 12px;
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 130px 0 100px;
+  padding: 110px 0 100px;
   overflow: hidden;
   background: var(--bg);
 }
 
-.hero-bg {
+.hero__orb {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(600px 400px at 70% -10%, rgba(124, 94, 62, 0.06), transparent 60%),
-              radial-gradient(500px 300px at 0% 110%, rgba(124, 94, 62, 0.04), transparent 50%);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
   z-index: 0;
+}
+
+.hero__orb--1 {
+  width: 520px; height: 520px;
+  top: -140px; right: -180px;
+  background: var(--accent);
+}
+
+.hero__orb--2 {
+  width: 420px; height: 420px;
+  bottom: -120px; left: -140px;
+  background: #1c1c1a;
 }
 
 .hero__wrap {
@@ -161,14 +173,24 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
 }
 
+.hero__eyebrow {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
 .hero__title {
   margin: 0 0 20px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(36px, 10vw, 72px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-  color: var(--text);
+  font-size: clamp(40px, 11vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -2.5px;
+  color: var(--ink);
 }
 
 .hero__title .word {
@@ -176,48 +198,67 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero__sub {
-  margin: 0 0 30px;
+  margin: 0 0 28px;
   font-size: 17px;
   color: var(--muted);
-  max-width: 460px;
-  line-height: 1.6;
+  max-width: 520px;
+  line-height: 1.7;
 }
 
-/* Sections */
+.hero__line {
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 4px;
+  opacity: 0;
+}
+
+/* ---------- Sections ---------- */
 .section {
-  padding: 80px 0;
+  padding: 86px 0;
 }
 
 .section--contact {
-  padding: 100px 0 60px;
+  padding: 100px 0 64px;
 }
 
 .section-head {
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .section-head--center { text-align: center; }
 
-.section__title {
-  margin: 0 0 12px;
+.section__eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(28px, 6vw, 44px);
-  line-height: 1.1;
-  letter-spacing: -1px;
-  color: var(--text);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section__title {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: var(--ink);
 }
 
 .section__intro {
   margin: 0;
   font-size: 16px;
   color: var(--muted);
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .section-head--center .section__intro { margin-inline: auto; }
 
-/* Services — simplified, images related to work */
+/* ---------- Services ---------- */
 .services-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -231,25 +272,25 @@ a { color: inherit; text-decoration: none; }
   background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   border-color: var(--accent);
   box-shadow: var(--shadow);
 }
 
 .service__image {
   width: 100%;
-  height: 260px;
+  height: 280px;
   background-size: cover;
   background-position: center;
-  background-color: #e8e2d6;
+  background-color: #e8e3d9;
 }
 
 .service__body {
-  padding: 24px;
+  padding: 26px;
 }
 
 .service__title {
@@ -258,31 +299,32 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
   font-size: 20px;
   letter-spacing: -0.5px;
+  color: var(--ink);
 }
 
 .service__desc {
   margin: 0;
   font-size: 15px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* Work — split by category */
+/* ---------- Work ---------- */
 .work-category {
-  margin-bottom: 72px;
+  margin-bottom: 80px;
 }
 
 .work-category:last-child { margin-bottom: 0; }
 
 .work-category__title {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 22px;
   letter-spacing: -0.5px;
-  color: var(--text);
-  border-left: 3px solid var(--accent);
-  padding-left: 14px;
+  color: var(--ink);
+  border-left: 4px solid var(--accent);
+  padding-left: 16px;
 }
 
 .work-grid {
@@ -297,34 +339,33 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: var(--surface);
   display: block;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
   color: inherit;
 }
 
 .work-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: var(--accent);
   box-shadow: var(--shadow);
-  color: var(--text);
 }
 
 .work-card__img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   object-fit: cover;
   display: block;
 }
 
 .work-card__img--insta {
-  height: 300px;
+  height: 320px;
   background-size: cover;
   background-position: center;
-  background-color: #e8e2d6;
+  background-color: #e8e3d9;
 }
 
 .work-card__body {
-  padding: 20px;
+  padding: 22px;
 }
 
 .work-card__title {
@@ -333,6 +374,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
   font-size: 18px;
   letter-spacing: -0.4px;
+  color: var(--ink);
 }
 
 .work-card__desc {
@@ -341,22 +383,22 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* Contact */
+/* ---------- Contact ---------- */
 .contact__wrap {
-  max-width: 560px;
+  max-width: 640px;
   margin-inline: auto;
   text-align: center;
 }
 
 .contact__note {
-  margin: 20px 0 0;
+  margin: 22px 0 0;
   font-size: 15px;
   color: var(--muted);
 }
 
-/* Footer */
+/* ---------- Footer ---------- */
 .footer {
-  padding: 40px 0;
+  padding: 42px 0;
   border-top: 1px solid var(--border);
   background: var(--surface);
 }
@@ -375,7 +417,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 
-/* Mobile-first responsive enhancements */
+/* ---------- Responsive ---------- */
 @media (min-width: 640px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -383,21 +425,15 @@ a { color: inherit; text-decoration: none; }
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .hero__wrap {
-    padding-left: 0;
-  }
+  .hero__title { font-size: clamp(48px, 12vw, 92px); }
 }
 
 @media (min-width: 1024px) {
-  .work-card__img {
-    height: 340px;
-  }
-  .service__image {
-    height: 300px;
-  }
+  .work-card__img { height: 360px; }
+  .service__image { height: 320px; }
 }
 
-/* Reduced motion */
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

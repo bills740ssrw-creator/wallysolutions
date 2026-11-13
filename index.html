@@ -9,9 +9,8 @@
     content="Websites, social media, and press for property, land and lifestyle brands."
   />
   <link rel="canonical" href="https://wallysolutions.com/" />
-  <meta name="theme-color" content="#fbfaf5" />
+  <meta name="theme-color" content="#fbfaf6" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -28,8 +27,10 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-bg"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
     <div class="wrap hero__wrap">
+      <div class="hero__eyebrow">Wally Solutions</div>
       <h1 class="hero__title">
         <span class="word">Websites</span>
         <span class="word">that</span>
@@ -39,7 +40,8 @@
       <p class="hero__sub">
         Websites, social media, and press for property, land, and lifestyle brands.
       </p>
-      <a href="#work" class="btn btn--primary">See our work</a>
+      <a href="#work" class="btn btn--primary btn--large">See our work</a>
+      <div class="hero__line"></div>
     </div>
   </section>
 
@@ -47,6 +49,7 @@
   <section class="section" id="services">
     <div class="wrap">
       <div class="section-head">
+        <span class="section__eyebrow">Our work</span>
         <h2 class="section__title">What we do</h2>
         <p class="section__intro">Three things. Done properly.</p>
       </div>
@@ -83,7 +86,8 @@
   <section class="section section--work" id="work">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="section__title">Work we've done</h2>
+        <span class="section__eyebrow">Our work</span>
+        <h2 class="section__title">Work we&rsquo;ve done</h2>
         <p class="section__intro">Sites built, feeds run, campaigns shipped.</p>
       </div>
 
@@ -149,8 +153,9 @@
   <section class="section section--contact" id="contact">
     <div class="wrap contact__wrap">
       <div class="section-head section-head--center">
-        <h2 class="section__title">Get in touch</h2>
-        <p class="section__intro">Tell us what you're building.</p>
+        <span class="section__eyebrow">Get in touch</span>
+        <h2 class="section__title">Start your project</h2>
+        <p class="section__intro">Tell us what you&rsquo;re building.</p>
       </div>
       <a href="mailto:hello@wallysolutions.com" class="btn btn--primary btn--large">hello@wallysolutions.com</a>
       <p class="contact__note">We reply within one working day. Direct communication — no account managers.</p>
@@ -165,36 +170,52 @@
   </footer>
 
   <script>
-    // Hero word reveal animation
-    const words = document.querySelectorAll('.hero__title .word');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }, i * 120);
-          observer.unobserve(entry.target);
+    /* Hero reveal animation — runs on load, staggered, visible above the fold */
+    (function(){
+      const words = document.querySelectorAll('.hero__title .word');
+      const line = document.querySelector('.hero__line');
+      const cta = document.querySelector('.btn--large');
+
+      const tl = [];
+      words.forEach((w, i) => {
+        w.style.opacity = '0';
+        w.style.transform = 'translateY(34px)';
+        w.style.transition = 'opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+        tl.push(setTimeout(() => {
+          w.style.opacity = '1';
+          w.style.transform = 'translateY(0)';
+        }, 180 + i * 130));
+      });
+
+      setTimeout(() => {
+        line.style.width = '64px';
+        line.style.opacity = '1';
+      }, 180 + words.length * 130 + 60);
+
+      setTimeout(() => {
+        cta.style.opacity = '1';
+        cta.style.transform = 'translateY(0)';
+      }, 180 + words.length * 130 + 180);
+
+      cta.style.opacity = '0';
+      cta.style.transform = 'translateY(20px)';
+      cta.style.transition = 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+      line.style.width = '0';
+      line.style.opacity = '0';
+      line.style.transition = 'width 0.6s ease, opacity 0.4s ease';
+    })();
+
+    /* Header scroll effect */
+    (function(){
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          header.classList.add('header--scrolled');
+        } else {
+          header.classList.remove('header--scrolled');
         }
       });
-    }, { threshold: 0.1 });
-
-    words.forEach(w => {
-      w.style.opacity = '0';
-      w.style.transform = 'translateY(30px)';
-      w.style.transition = 'all 0.6s cubic-bezier(0.25, 1, 0.25, 1)';
-      observer.observe(w);
-    });
-
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.remove('header--scrolled');
-      }
-    });
+    })();
   </script>
 </body>
 </html>
