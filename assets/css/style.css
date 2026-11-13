@@ -761,6 +761,66 @@ html:not(.js) [data-reveal] {
 }
 
 /* ============================================================
+   Stats / Proof Strip
+   ============================================================ */
+
+.stats {
+  padding-block: 46px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  border-left: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 12px 12px 0;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  border-color: #fff;
+}
+
+.stat__num {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+  letter-spacing: -0.6px;
+}
+
+.stat__label {
+  font-size: 13.5px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .stats__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
    About
    ============================================================ */
 
@@ -893,6 +953,37 @@ html:not(.js) [data-reveal] {
    Work / cards
    ============================================================ */
 
+.work__filters {
+  display: flex;
+  gap: 10px;
+  margin: 32px 0 40px;
+  flex-wrap: wrap;
+}
+
+.work__filter {
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+
+.work__filter:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.work__filter.active {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
 .work__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -953,15 +1044,25 @@ html:not(.js) [data-reveal] {
   z-index: 2;
   top: 18px;
   left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(5, 5, 5, 0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(5, 5, 5, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--accent);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.card__tag .tag__ico {
+  width: 14px;
+  height: 14px;
 }
 
 .card__overlay {
@@ -969,7 +1070,7 @@ html:not(.js) [data-reveal] {
   inset: auto 0 0 0;
   z-index: 2;
   padding: 26px 24px;
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.92) 20%, rgba(5, 5, 5, 0.55) 65%, transparent);
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.94) 25%, rgba(5, 5, 5, 0.6) 70%, transparent);
 }
 
 .card__overlay h3 {
@@ -982,17 +1083,18 @@ html:not(.js) [data-reveal] {
 
 .card__overlay p {
   margin: 0;
-  max-width: 92%;
-  color: #b8c0c4;
-  font-size: 15px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  max-width: 94%;
+  color: #c0c8cc;
+  font-size: 14.5px;
+  line-height: 1.5;
+  opacity: 0.88;
+  transform: none;
+  transition: opacity 0.35s var(--ease), color 0.35s var(--ease);
 }
 
 .card__media:hover .card__overlay p {
   opacity: 1;
-  transform: none;
+  color: #ffffff;
 }
 
 /* Instagram tiles */
@@ -1303,6 +1405,27 @@ html:not(.js) [data-reveal] {
   transform: translateY(-6px);
 }
 
+.ci-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  border-radius: 6px;
+  background: rgba(5, 5, 5, 0.08);
+  border: 1px solid rgba(5, 5, 5, 0.14);
+  color: #052723;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.clients__item:hover .ci-mark {
+  background: rgba(5, 39, 35, 0.16);
+  border-color: rgba(5, 39, 35, 0.3);
+}
+
 /* ============================================================
    Team
    ============================================================ */
@@ -1365,6 +1488,23 @@ html:not(.js) [data-reveal] {
   margin: 0;
   color: var(--muted);
   font-size: 15.5px;
+}
+
+.person__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.person__tags span {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: #b0b8bc;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* ============================================================
@@ -1775,6 +1915,23 @@ html:not(.js) [data-reveal] {
   color: var(--muted);
   font-size: 15.5px;
   max-width: 460px;
+}
+
+.contact__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn--whatsapp {
+  background: #25d366;
+  color: #062b14;
+}
+
+.btn--whatsapp:hover {
+  background: #1ebc59;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
 }
 
 .footer {

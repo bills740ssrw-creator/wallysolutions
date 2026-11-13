@@ -223,6 +223,28 @@
     });
   }
 
+  /* ---------- Work category filtering ---------- */
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll(".work__filter"));
+  var workCards = Array.prototype.slice.call(document.querySelectorAll(".work__grid .card"));
+  if (filterBtns.length && workCards.length) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var filter = btn.getAttribute("data-filter");
+        filterBtns.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        workCards.forEach(function (card) {
+          var cat = card.getAttribute("data-category");
+          if (filter === "all" || cat === filter) {
+            card.style.display = "";
+            card.classList.add("is-in");
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

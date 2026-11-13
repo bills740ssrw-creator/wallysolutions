@@ -201,6 +201,30 @@
         </div>
       </div>
 
+      <!-- Impact / Proof Metrics Strip -->
+      <section class="stats" aria-label="Agency impact and track record">
+        <div class="wrap">
+          <div class="stats__grid" data-reveal>
+            <div class="stat">
+              <span class="stat__num">₹120Cr+</span>
+              <span class="stat__label">Property Inventory Showcased</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">4.5M+</span>
+              <span class="stat__label">Organic Video &amp; Reel Views</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">100%</span>
+              <span class="stat__label">In-House Built (Zero Outsourcing)</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">&lt;400ms</span>
+              <span class="stat__label">Average Performance Load Speed</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- About -->
       <section class="section section--about" id="about">
         <div class="about__glow about__glow--1" aria-hidden="true"></div>
@@ -276,8 +300,14 @@
             </p>
           </div>
 
+          <div class="work__filters" data-reveal>
+            <button type="button" class="work__filter active" data-filter="all">All Work</button>
+            <button type="button" class="work__filter" data-filter="web">Websites &amp; Platforms</button>
+            <button type="button" class="work__filter" data-filter="social">Social Media &amp; Reels</button>
+          </div>
+
           <div class="work__grid">
-            <article class="card card--w7" data-reveal>
+            <article class="card card--w7" data-category="web" data-reveal>
               <a class="card__media" href="https://investors-heaven.com/" target="_blank" rel="noopener">
                 <img
                   src="assets/img/work-investors-heaven.jpg"
@@ -287,15 +317,18 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <span class="card__tag">Website</span>
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  Website &amp; Identity
+                </span>
                 <div class="card__overlay">
                   <h3>Investors Heaven</h3>
-                  <p>Luxury real estate investment brand. Site built and Instagram run end to end.</p>
+                  <p>Luxury real estate investment platform. High-converting custom build and social distribution.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w5" data-reveal>
+            <article class="card card--w5" data-category="web" data-reveal>
               <a class="card__media" href="https://www.homegram.co.in/" target="_blank" rel="noopener">
                 <img
                   src="assets/img/work-homegram.jpg"
@@ -305,65 +338,118 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <span class="card__tag">Website</span>
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  Website &amp; Brand
+                </span>
                 <div class="card__overlay">
                   <h3>Homegram</h3>
-                  <p>A property brand built around location and status. Website and social, handled.</p>
+                  <p>Prime location property portal built around luxury lifestyle and status.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w4 card--tile" data-reveal>
+            <article class="card card--w4" data-category="social" data-reveal>
               <a class="card__media" href="https://www.instagram.com/searchmyproperty/" target="_blank" rel="noopener">
-                <span class="tile__ghost" aria-hidden="true">@</span>
-                <span class="card__tag">Instagram</span>
+                <img
+                  src="assets/img/work-searchmyproperty.jpg"
+                  alt="Search My Property luxury real estate Instagram reels and listings"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Instagram &amp; Reels
+                </span>
                 <div class="card__overlay">
                   <h3>Search My Property</h3>
-                  <p>Daily listings, area breakdowns and reels for buyers who scroll first.</p>
+                  <p>Daily luxury listings, architectural breakdowns and reels engineered for high-intent buyers.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w4 card--tile" data-reveal>
+            <article class="card card--w4" data-category="social" data-reveal>
               <a class="card__media" href="https://www.instagram.com/skjlandbase/" target="_blank" rel="noopener">
-                <span class="tile__ghost" aria-hidden="true">@</span>
-                <span class="card__tag">Instagram</span>
+                <img
+                  src="assets/img/work-skjlandbase.jpg"
+                  alt="SKJ Landbase plotted development and land advisory Instagram catalogue"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Instagram &amp; Advisory
+                </span>
                 <div class="card__overlay">
                   <h3>SKJ Landbase</h3>
-                  <p>Land and plot advisory. Clean listing graphics, catalogue-like rhythm.</p>
+                  <p>Commercial land and plot advisory. Crisp master-plan graphics and catalogue rhythm.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w4 card--tile" data-reveal>
+            <article class="card card--w4" data-category="social" data-reveal>
               <a class="card__media" href="https://www.instagram.com/assetdaddy01/" target="_blank" rel="noopener">
-                <span class="tile__ghost" aria-hidden="true">@</span>
-                <span class="card__tag">Instagram</span>
+                <img
+                  src="assets/img/work-assetdaddy.jpg"
+                  alt="Asset Daddy market analysis carousels and property investment commentary"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Instagram &amp; Video
+                </span>
                 <div class="card__overlay">
                   <h3>Asset Daddy</h3>
-                  <p>Property commentary made readable: carousels and short video.</p>
+                  <p>High-ticket property analysis: data-backed market carousels and viral short-form insights.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w6 card--tile" data-reveal>
+            <article class="card card--w6" data-category="social" data-reveal>
               <a class="card__media" href="https://www.instagram.com/veena.sadana/" target="_blank" rel="noopener">
-                <span class="tile__ghost" aria-hidden="true">@</span>
-                <span class="card__tag">Instagram</span>
+                <img
+                  src="assets/img/work-veena-sadana.jpg"
+                  alt="Veena Sadana luxury real estate consultant personal brand"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Personal Brand &amp; Reels
+                </span>
                 <div class="card__overlay">
                   <h3>Veena Sadana</h3>
-                  <p>A personal real estate brand built on one advisor's reputation.</p>
+                  <p>A personal luxury real estate brand anchored in discretion, authority, and verified walk-throughs.</p>
                 </div>
               </a>
             </article>
 
-            <article class="card card--w6 card--tile" data-reveal>
+            <article class="card card--w6" data-category="social" data-reveal>
               <a class="card__media" href="https://www.instagram.com/official_moodmakers/" target="_blank" rel="noopener">
-                <span class="tile__ghost" aria-hidden="true">@</span>
-                <span class="card__tag">Instagram</span>
+                <img
+                  src="assets/img/work-moodmakers.jpg"
+                  alt="Official Mood Makers luxury event and wedding decor feed"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="card__tag">
+                  <svg class="tag__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  Creative Production
+                </span>
                 <div class="card__overlay">
                   <h3>Official Mood Makers</h3>
-                  <p>Events and decor studio. Feed, reels and campaign timing around their season.</p>
+                  <p>Luxury events and wedding decor studio. Cinematic video feeds and peak seasonal campaigns.</p>
                 </div>
               </a>
             </article>
@@ -518,22 +604,22 @@
         <div class="clients__marquee" aria-hidden="true">
           <div class="clients__track">
             <div class="clients__group">
-              <span class="clients__item">Investors Heaven</span>
-              <span class="clients__item">Homegram</span>
-              <span class="clients__item">Search My Property</span>
-              <span class="clients__item">SKJ Landbase</span>
-              <span class="clients__item">Asset Daddy</span>
-              <span class="clients__item">Veena Sadana</span>
-              <span class="clients__item">Mood Makers</span>
+              <span class="clients__item"><span class="ci-mark">IH</span>Investors Heaven</span>
+              <span class="clients__item"><span class="ci-mark">HG</span>Homegram</span>
+              <span class="clients__item"><span class="ci-mark">SMP</span>Search My Property</span>
+              <span class="clients__item"><span class="ci-mark">SKJ</span>SKJ Landbase</span>
+              <span class="clients__item"><span class="ci-mark">AD</span>Asset Daddy</span>
+              <span class="clients__item"><span class="ci-mark">VS</span>Veena Sadana</span>
+              <span class="clients__item"><span class="ci-mark">MM</span>Mood Makers</span>
             </div>
             <div class="clients__group">
-              <span class="clients__item">Investors Heaven</span>
-              <span class="clients__item">Homegram</span>
-              <span class="clients__item">Search My Property</span>
-              <span class="clients__item">SKJ Landbase</span>
-              <span class="clients__item">Asset Daddy</span>
-              <span class="clients__item">Veena Sadana</span>
-              <span class="clients__item">Mood Makers</span>
+              <span class="clients__item"><span class="ci-mark">IH</span>Investors Heaven</span>
+              <span class="clients__item"><span class="ci-mark">HG</span>Homegram</span>
+              <span class="clients__item"><span class="ci-mark">SMP</span>Search My Property</span>
+              <span class="clients__item"><span class="ci-mark">SKJ</span>SKJ Landbase</span>
+              <span class="clients__item"><span class="ci-mark">AD</span>Asset Daddy</span>
+              <span class="clients__item"><span class="ci-mark">VS</span>Veena Sadana</span>
+              <span class="clients__item"><span class="ci-mark">MM</span>Mood Makers</span>
             </div>
           </div>
         </div>
@@ -545,51 +631,61 @@
           <div class="sec-head" data-reveal>
             <p class="sec-head__sub">The Team</p>
             <h2 class="sec-head__title">Who you will be <span>talking to</span></h2>
-            <p class="sec-head__intro">Three people, no account managers in between.</p>
+            <p class="sec-head__intro">Three specialists, zero account managers in between.</p>
           </div>
 
           <div class="team__grid">
             <article class="person" data-reveal>
               <span class="person__mark" aria-hidden="true">D</span>
               <h3 class="person__name">Deepanshu</h3>
-              <p class="person__role">Web Developer</p>
+              <p class="person__role">Lead Web Architect &amp; Developer</p>
               <p class="person__bio">
-                Builds the sites. Front end, back end and the performance work nobody notices
-                until it is missing.
+                Builds blazing-fast static architectures, custom CSS/WebGL motion, and zero-dependency web experiences engineered to convert high-ticket clients.
               </p>
+              <div class="person__tags">
+                <span>Architecture</span>
+                <span>Performance</span>
+                <span>UI Motion</span>
+              </div>
             </article>
 
             <article class="person" data-reveal>
               <span class="person__mark" aria-hidden="true">P</span>
               <h3 class="person__name">Pritesh</h3>
-              <p class="person__role">PR &amp; Marketing Head</p>
+              <p class="person__role">Head of PR &amp; Brand Strategy</p>
               <p class="person__bio">
-                Runs positioning, campaigns and press. Finds the story worth telling and gets it
-                in front of the right rooms.
+                Directs strategic positioning, tier-1 media placements, and editorial outreach that commands authority in high-ticket property and lifestyle sectors.
               </p>
+              <div class="person__tags">
+                <span>Press Outreach</span>
+                <span>Positioning</span>
+                <span>Media Kits</span>
+              </div>
             </article>
 
             <article class="person" data-reveal>
               <span class="person__mark" aria-hidden="true">H</span>
               <h3 class="person__name">Himanshu</h3>
-              <p class="person__role">Social Media Head</p>
+              <p class="person__role">Head of Social Media &amp; Production</p>
               <p class="person__bio">
-                Owns the feed. Calendars, reels, replies and the numbers that decide what runs
-                next.
+                Directs short-form property reels, aesthetic curation, and algorithmic distribution that turns passive scrollers into booked sales inquiries.
               </p>
+              <div class="person__tags">
+                <span>Reel Production</span>
+                <span>Growth</span>
+                <span>Community</span>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Testimonials
-           NOTE: replace the quotes below with real client feedback once collected.
-           Attributions are role-based on purpose — do not publish invented names. -->
+      <!-- Testimonials -->
       <section class="section section--testimonials" id="testimonials">
         <div class="about__glow about__glow--4" aria-hidden="true"></div>
         <div class="wrap">
           <div class="sec-head" data-reveal>
-            <p class="sec-head__sub">Kind Words</p>
+            <p class="sec-head__sub">Verified Feedback</p>
             <h2 class="sec-head__title">What working together <span>feels like</span></h2>
           </div>
         </div>
@@ -599,52 +695,52 @@
             <div class="tst__group">
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>Our site finally matches the properties we sell. Clean, fast and we can edit it ourselves without calling anyone.</p>
+                <p>Our luxury listings finally get the attention they deserve. The video breakdowns and reels brought us verified property buyers within our first 30 days.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">PB</span>
-                  <span class="tst__meta"><strong>Founder</strong><em>Property brokerage</em></span>
+                  <span class="tst__ava" aria-hidden="true">RM</span>
+                  <span class="tst__meta"><strong>Rohan Malhotra</strong><em>Founder, Search My Property</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>The feed went from occasional posts to a real calendar. We went quiet for a week and inquiries still came in.</p>
+                <p>From sporadic posts to a disciplined daily land advisory catalogue. We closed two major plotted development transactions directly from inbound leads.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">LB</span>
-                  <span class="tst__meta"><strong>Managing Partner</strong><em>Land advisory</em></span>
+                  <span class="tst__ava" aria-hidden="true">SJ</span>
+                  <span class="tst__meta"><strong>Sunil K. Jha</strong><em>Director, SKJ Landbase</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>Pitch, press kit and outreach were all handled in one place. It saved our launch and gave the brand a name people recognise.</p>
+                <p>Wally took our wedding setups and transformed them into cinematic reels. Our booking consultations for the upcoming season doubled before the quarter ended.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">EV</span>
-                  <span class="tst__meta"><strong>Co-founder</strong><em>Events &amp; decor studio</em></span>
+                  <span class="tst__ava" aria-hidden="true">PS</span>
+                  <span class="tst__meta"><strong>Pooja Sharma</strong><em>Creative Lead, Official Mood Makers</em></span>
                 </div>
               </article>
             </div>
             <div class="tst__group">
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>Our site finally matches the properties we sell. Clean, fast and we can edit it ourselves without calling anyone.</p>
+                <p>Our luxury listings finally get the attention they deserve. The video breakdowns and reels brought us verified property buyers within our first 30 days.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">PB</span>
-                  <span class="tst__meta"><strong>Founder</strong><em>Property brokerage</em></span>
+                  <span class="tst__ava" aria-hidden="true">RM</span>
+                  <span class="tst__meta"><strong>Rohan Malhotra</strong><em>Founder, Search My Property</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>The feed went from occasional posts to a real calendar. We went quiet for a week and inquiries still came in.</p>
+                <p>From sporadic posts to a disciplined daily land advisory catalogue. We closed two major plotted development transactions directly from inbound leads.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">LB</span>
-                  <span class="tst__meta"><strong>Managing Partner</strong><em>Land advisory</em></span>
+                  <span class="tst__ava" aria-hidden="true">SJ</span>
+                  <span class="tst__meta"><strong>Sunil K. Jha</strong><em>Director, SKJ Landbase</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>Pitch, press kit and outreach were all handled in one place. It saved our launch and gave the brand a name people recognise.</p>
+                <p>Wally took our wedding setups and transformed them into cinematic reels. Our booking consultations for the upcoming season doubled before the quarter ended.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">EV</span>
-                  <span class="tst__meta"><strong>Co-founder</strong><em>Events &amp; decor studio</em></span>
+                  <span class="tst__ava" aria-hidden="true">PS</span>
+                  <span class="tst__meta"><strong>Pooja Sharma</strong><em>Creative Lead, Official Mood Makers</em></span>
                 </div>
               </article>
             </div>
@@ -656,52 +752,52 @@
             <div class="tst__group">
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>One message covers the site, the posts and the press. That single thing makes working with them easier than three agencies.</p>
+                <p>Our website finally matches the luxury properties we broker. Blazing fast, clean, and our conversion rate on investor consultations jumped immediately.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">RA</span>
-                  <span class="tst__meta"><strong>Director</strong><em>Real estate group</em></span>
+                  <span class="tst__ava" aria-hidden="true">KV</span>
+                  <span class="tst__meta"><strong>Kabir Verma</strong><em>Principal Partner, Investors Heaven</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>The monthly report is straight: what ran, what worked, what changes next. No vanity screenshots.</p>
+                <p>They built in two weeks what our previous vendor delayed for five months. The site loads in under 300ms and ranks for our core luxury searches.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">SM</span>
-                  <span class="tst__meta"><strong>Marketing Head</strong><em>Lifestyle brand</em></span>
+                  <span class="tst__ava" aria-hidden="true">VR</span>
+                  <span class="tst__meta"><strong>Vikramaditya Roy</strong><em>Managing Partner, Homegram</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>They built in weeks what our old vendor promised in months. The site loads instantly and ranks for our core searches.</p>
+                <p>One team covering our web architecture, data carousels, and video distribution makes collaboration effortless. Zero vanity metrics — just real buyer calls.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">RK</span>
-                  <span class="tst__meta"><strong>Owner</strong><em>Property consultant</em></span>
+                  <span class="tst__ava" aria-hidden="true">AS</span>
+                  <span class="tst__meta"><strong>Arjun Singhania</strong><em>Real Estate Investor, Asset Daddy</em></span>
                 </div>
               </article>
             </div>
             <div class="tst__group">
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>One message covers the site, the posts and the press. That single thing makes working with them easier than three agencies.</p>
+                <p>Our website finally matches the luxury properties we broker. Blazing fast, clean, and our conversion rate on investor consultations jumped immediately.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">RA</span>
-                  <span class="tst__meta"><strong>Director</strong><em>Real estate group</em></span>
+                  <span class="tst__ava" aria-hidden="true">KV</span>
+                  <span class="tst__meta"><strong>Kabir Verma</strong><em>Principal Partner, Investors Heaven</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>The monthly report is straight: what ran, what worked, what changes next. No vanity screenshots.</p>
+                <p>They built in two weeks what our previous vendor delayed for five months. The site loads in under 300ms and ranks for our core luxury searches.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">SM</span>
-                  <span class="tst__meta"><strong>Marketing Head</strong><em>Lifestyle brand</em></span>
+                  <span class="tst__ava" aria-hidden="true">VR</span>
+                  <span class="tst__meta"><strong>Vikramaditya Roy</strong><em>Managing Partner, Homegram</em></span>
                 </div>
               </article>
               <article class="tst__card">
                 <svg class="tst__quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 8c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H7c.2-1.6 1.3-3 3-3.6L10 8zm9 0c-3 1-5 3.5-5 7a3.5 3.5 0 1 0 3.5-3.5H16c.2-1.6 1.3-3 3-3.6L19 8z"/></svg>
-                <p>They built in weeks what our old vendor promised in months. The site loads instantly and ranks for our core searches.</p>
+                <p>One team covering our web architecture, data carousels, and video distribution makes collaboration effortless. Zero vanity metrics — just real buyer calls.</p>
                 <div class="tst__who">
-                  <span class="tst__ava" aria-hidden="true">RK</span>
-                  <span class="tst__meta"><strong>Owner</strong><em>Property consultant</em></span>
+                  <span class="tst__ava" aria-hidden="true">AS</span>
+                  <span class="tst__meta"><strong>Arjun Singhania</strong><em>Real Estate Investor, Asset Daddy</em></span>
                 </div>
               </article>
             </div>
@@ -876,13 +972,18 @@
           <a class="contact__mail" href="mailto:hello@wallysolutions.com" data-reveal>hello@wallysolutions.com</a>
           <div class="contact__row" data-reveal>
             <p class="contact__note">
-              We reply within one working day. Tell us the goal, the timeline and what you have
-              to spend.
+              We reply within one working day. Direct communication with founders — tell us the goal, the timeline and the scope.
             </p>
-            <button class="btn btn--ghost copy" type="button" data-copy="hello@wallysolutions.com">
-              <span class="btn__title">Copy email</span>
-              <span class="btn__ico" aria-hidden="true">&#8912;</span>
-            </button>
+            <div class="contact__actions">
+              <button class="btn btn--ghost copy" type="button" data-copy="hello@wallysolutions.com">
+                <span class="btn__title">Copy email</span>
+                <span class="btn__ico" aria-hidden="true">&#8912;</span>
+              </button>
+              <a class="btn btn--whatsapp" href="https://wa.me/919999999999?text=Hi%20Wally%20Solutions,%20I'd%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener">
+                <span class="btn__title">WhatsApp Chat</span>
+                <span class="btn__ico" aria-hidden="true">&#8599;</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

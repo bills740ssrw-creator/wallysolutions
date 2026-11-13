@@ -52,8 +52,7 @@ robots.txt, sitemap.xml
 
 ## Notes
 
-- Client thumbnails are real screenshots of `investors-heaven.com` and
-  `homegram.co.in`. Re-capture them if those sites change.
+- Client thumbnails are real screenshots and custom architectural photography of `investors-heaven.com`, `homegram.co.in`, and client Instagram portfolios (`searchmyproperty`, `skjlandbase`, `assetdaddy`, `veena.sadana`, `moodmakers`).
 - Fonts are self-hosted, so the site makes no third-party requests.
 - The contact section is email-first on purpose. No form backend is wired up.
 - All animation is CSS + IntersectionObserver, respects `prefers-reduced-motion`,
