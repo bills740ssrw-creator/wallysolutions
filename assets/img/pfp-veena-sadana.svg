@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="vsBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e222b"/>
+      <stop offset="100%" stop-color="#0a0c10"/>
+    </radialGradient>
+    <linearGradient id="vsGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcedb4"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#aa820a"/>
+    </linearGradient>
+    <linearGradient id="ringGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#aa820a"/>
+      <stop offset="50%" stop-color="#fcedb4"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#vsBg)"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="url(#ringGold)" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.6"/>
+  <circle cx="200" cy="200" r="162" fill="none" stroke="url(#ringGold)" stroke-width="1.5" opacity="0.85"/>
+  <circle cx="200" cy="200" r="152" fill="#0d0f14" stroke="url(#vsGold)" stroke-width="1" opacity="0.95"/>
+  <!-- Decorative small stars -->
+  <polygon points="200,60 203,68 211,68 205,73 207,81 200,76 193,81 195,73 189,68 197,68" fill="url(#vsGold)" opacity="0.8"/>
+  <polygon points="200,324 203,332 211,332 205,337 207,345 200,340 193,345 195,337 189,332 197,332" fill="url(#vsGold)" opacity="0.8"/>
+  <text x="200" y="218" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', 'Bricolage Grotesque', Georgia, serif" font-weight="700" font-size="94" fill="url(#vsGold)" letter-spacing="4">VS</text>
+  <text x="200" y="260" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-weight="600" font-size="13" fill="#e8d595" letter-spacing="6">VEENA SADANA</text>
+  <text x="200" y="278" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-weight="500" font-size="10" fill="#9e9780" letter-spacing="4">REAL ESTATE ADVISORY</text>
+</svg>

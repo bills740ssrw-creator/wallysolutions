@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="mmBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#0a1f18"/>
+      <stop offset="100%" stop-color="#040b08"/>
+    </radialGradient>
+    <linearGradient id="mmRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe3eb"/>
+      <stop offset="50%" stop-color="#e8a2b5"/>
+      <stop offset="100%" stop-color="#b85f7a"/>
+    </linearGradient>
+    <linearGradient id="mmGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="50%" stop-color="#fdf4d8"/>
+      <stop offset="100%" stop-color="#e2bf54"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#mmBg)"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="url(#mmGold)" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="200" r="162" fill="none" stroke="url(#mmRose)" stroke-width="1.2" opacity="0.75"/>
+  <circle cx="200" cy="200" r="150" fill="#06120d" stroke="url(#mmGold)" stroke-width="0.8" opacity="0.95"/>
+  <!-- Decorative floral motif -->
+  <path d="M200,68 C205,80 216,90 226,90 C216,95 208,104 200,116 C192,104 184,95 174,90 C184,90 195,80 200,68 Z" fill="url(#mmGold)" opacity="0.85"/>
+  <text x="200" y="222" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', 'Bricolage Grotesque', Georgia, serif" font-weight="700" font-size="88" fill="url(#mmRose)" letter-spacing="6">MM</text>
+  <text x="200" y="262" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-weight="700" font-size="13" fill="url(#mmGold)" letter-spacing="5">MOOD MAKERS</text>
+  <text x="200" y="280" text-anchor="middle" font-family="'Geist', system-ui, sans-serif" font-weight="500" font-size="10" fill="#a3b8b0" letter-spacing="3.5">LUXURY EVENTS &amp; DECOR</text>
+</svg>
