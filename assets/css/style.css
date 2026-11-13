@@ -148,17 +148,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg);
 }
 
-.hero__lava {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  /* Gooey metaball filter: blur then high contrast makes blobs merge like real lava */
-  filter: blur(56px) contrast(12);
-  opacity: 0.85;
-  background: #0a0a08;
-}
 
 .hero__wrap {
   position: relative;

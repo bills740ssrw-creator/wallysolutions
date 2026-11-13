@@ -27,7 +27,6 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <canvas class="hero__lava" id="heroLava" aria-hidden="true"></canvas>
     <div class="wrap hero__wrap">
       <div class="hero__eyebrow">Wally Solutions</div>
       <h1 class="hero__title">
@@ -218,101 +217,6 @@
       });
     })();
 
-    /* Lava background — actual flowing lava lamp: black bottom, rising blobs
-       shift black → red → orange → yellow as they rise, gooey metaball merge */
-    (function(){
-      var canvas = document.getElementById('heroLava');
-      if(!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var width, height;
-      var blobs = [];
-      var time = 0;
-
-      function resize(){
-        var r = canvas.parentElement;
-        width = canvas.width = r ? r.clientWidth : window.innerWidth;
-        height = canvas.height = r ? r.clientHeight : window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      // Create lava blobs that rise from the bottom
-      for(var i=0; i<8; i++){
-        blobs.push({
-          x: Math.random()*width,
-          y: height + 100 + Math.random()*200,  // start below canvas
-          vx: (Math.random()-0.5)*0.2,
-          vy: -(0.4 + Math.random()*0.6),        // rise upward
-          r: 60 + Math.random()*110,
-          phase: Math.random()*Math.PI*2,
-          life: Math.random(),
-          baseR: 0
-        });
-      }
-
-      function lavaColor(t){
-        // t: 0 (bottom, black) → 1 (top, yellow)
-        // black → dark red → red → orange → yellow
-        if(t < 0.25) {
-          // black to dark red
-          var c = t/0.25;
-          return 'rgb(' + Math.round(139*c) + ',0,0)';
-        } else if(t < 0.5) {
-          // dark red to red-orange
-          var c = (t-0.25)/0.25;
-          return 'rgb(' + Math.round(139+116*c) + ',' + Math.round(65*c) + ',0)';
-        } else if(t < 0.75) {
-          // red-orange to orange-yellow
-          var c = (t-0.5)/0.25;
-          return 'rgb(255,' + Math.round(65+140*c) + ',0)';
-        } else {
-          // orange-yellow to bright yellow
-          var c = (t-0.75)/0.25;
-          return 'rgb(255,' + Math.round(205+50*c) + ',' + Math.round(0+20*c) + ')';
-        }
-      }
-
-      function draw(){
-        time += 0.01;
-        ctx.clearRect(0,0,width,height);
-        ctx.save();
-        ctx.globalCompositeOperation = 'lighter';
-
-        blobs.forEach(function(b){
-          // Wobble / organic movement
-          b.x += b.vx + Math.sin(time + b.phase)*0.8;
-          b.y += b.vy;
-
-          // Reset blob when it rises past top
-          if(b.y < -b.r){
-            b.y = height + b.r + Math.random()*100;
-            b.x = Math.random()*width;
-            b.vx = (Math.random()-0.5)*0.2;
-            b.vy = -(0.4 + Math.random()*0.6);
-            b.r = 60 + Math.random()*110;
-            b.life = Math.random();
-          }
-
-          // Color based on vertical position (bottom=black, top=yellow)
-          var t = 1 - (b.y + b.r) / (height + b.r*2);
-          t = Math.max(0, Math.min(1, t));
-          var col = lavaColor(t);
-
-          // Size pulses slightly
-          var pulseR = b.r + Math.sin(time*2 + b.phase)*8;
-
-          ctx.beginPath();
-          ctx.arc(b.x, b.y, pulseR, 0, Math.PI*2);
-          ctx.fillStyle = col;
-          ctx.globalAlpha = 0.55 + 0.25*Math.sin(time + b.life);
-          ctx.fill();
-        });
-
-        ctx.restore();
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
   </script>
 </body>
 </html>
