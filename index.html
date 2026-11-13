@@ -27,8 +27,7 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero__orb hero__orb--1"></div>
-    <div class="hero__orb hero__orb--2"></div>
+    <canvas class="hero__lava" id="heroLava" aria-hidden="true"></canvas>
     <div class="wrap hero__wrap">
       <div class="hero__eyebrow">Wally Solutions</div>
       <h1 class="hero__title">
@@ -215,6 +214,53 @@
           header.classList.remove('header--scrolled');
         }
       });
+    })();
+
+    /* Lava background — yellow/orange/red/black drifting blobs */
+    (function(){
+      var canvas = document.getElementById('heroLava');
+      if(!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var width, height;
+      var blobs = [];
+      var colors = ['#FACC15', '#FB923C', '#EF4444', '#000000'];
+
+      function resize(){
+        var r = canvas.parentElement;
+        width = canvas.width = r ? r.clientWidth : window.innerWidth;
+        height = canvas.height = r ? r.clientHeight : window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for(var i=0; i<6; i++){
+        blobs.push({
+          x: Math.random()*width,
+          y: Math.random()*height,
+          vx: (Math.random()-0.5)*0.35,
+          vy: (Math.random()-0.5)*0.35,
+          r: 70 + Math.random()*140,
+          color: colors[Math.floor(Math.random()*colors.length)]
+        });
+      }
+
+      function draw(){
+        ctx.clearRect(0,0,width,height);
+        blobs.forEach(function(b){
+          b.x += b.vx;
+          b.y += b.vy;
+          if(b.x < -b.r) b.x = width + b.r;
+          if(b.x > width + b.r) b.x = -b.r;
+          if(b.y < -b.r) b.y = height + b.r;
+          if(b.y > height + b.r) b.y = -b.r;
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, b.r, 0, Math.PI*2);
+          ctx.fillStyle = b.color;
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
     })();
   </script>
 </body>
